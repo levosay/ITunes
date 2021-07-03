@@ -42,8 +42,20 @@ export const videoPlayerInit = () => {
         videoPlayer.volume = valueVolume / 100;
     };
 
-    videoPlayer.addEventListener('click', togglePlay);
+    videoPlayer.addEventListener('click', () => {
+        if (!document.fullscreen) {
+            togglePlay()
+        } 
+    });
     videoButtonPlay.addEventListener('click', togglePlay);
+
+    // videoPlayer.addEventListener('click', () => {
+    //     if (videoPlayer.fullscreenchange) {
+    //         videoPlayer.remove.addEventListener('click', togglePlay);
+    //     } else {
+    //         videoPlayer.addEventListener('click', togglePlay);
+    //     }
+    // });
 
     videoPlayer.addEventListener('play', toggleIcon);
     videoPlayer.addEventListener('pause', toggleIcon);
@@ -74,6 +86,10 @@ export const videoPlayerInit = () => {
     });
 
     videoVolume.addEventListener('input', changeValue);
+
+    videoPlayer.addEventListener('volumechange', () => {
+        videoVolume.value = Math.round(videoPlayer.volume * 100);
+    });
 
 };
 
