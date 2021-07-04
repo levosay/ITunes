@@ -670,4 +670,16 @@ input.video-volume {
   cursor: pointer;
 }
 
+.fa-volume-down {
+  margin-left: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+input.radio-volume {
+  max-width: 150px;
+  margin-right: 10px;
+}
+.fa-volume-up {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.min.css.map */

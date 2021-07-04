@@ -5,6 +5,9 @@ export const radioPlayerInit = () => {
     const radioNavigation = document.querySelector('.radio-navigation');
     const radioItem = document.querySelectorAll('.radio-item');
     const radioStop = document.querySelector('.radio-stop');
+    const faVolumeDown = document.querySelector('.fa-volume-down-radio')
+    const radioVolume = document.querySelector('.radio-volume')
+    const faVolumeUp = document.querySelector('.fa-volume-up-radio')
 
     const audio = new Audio();
     audio.type = 'audio/aac';
@@ -28,6 +31,20 @@ export const radioPlayerInit = () => {
         elem.classList.add('select');
     }
 
+    const downVolume = () => {
+        nowVolume.push(audio.volume);
+        if (nowVolume.length > 2) {
+            nowVolume.shift()
+        }
+        if (audio.volume == 0) {
+            audio.volume = nowVolume[0];
+            radioVolume.value = audio.volume * 100;
+        } else {
+            audio.volume = 0;
+            radioVolume.value = audio.volume;
+        }
+    }
+
     radioNavigation.addEventListener('change', (event) => {
         const target = event.target;
         const parrent = target.closest('.radio-item');
@@ -44,9 +61,16 @@ export const radioPlayerInit = () => {
 
         audio.play();
         changeIconPlay();
+
+        audio.volume = radioVolume.value / 100;
     })
 
-    
+    radioVolume.addEventListener('input', () => {
+        audio.volume = radioVolume.value / 100;
+    })
+
+    let nowVolume = new Array();
+    faVolumeDown.addEventListener('click', downVolume)
 
     radioStop.addEventListener('click', () => {
         if (audio.paused) {
@@ -57,4 +81,8 @@ export const radioPlayerInit = () => {
         changeIconPlay();
     });
 
+    faVolumeUp.addEventListener('click', () => {
+        audio.volume = 1;
+        radioVolume.value = audio.volume * 100;
+    })
 };

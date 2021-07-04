@@ -10,10 +10,10 @@ html {
 
 body {
   min-height: 100vh;
-  background: #F2F2F2;
+  background: #f2f2f2;
   font-family: Arial, sans-serif;
   font-size: 16px;
-  color: #0F1E36;
+  color: #0f1e36;
 }
 
 button,
@@ -105,26 +105,24 @@ main {
   }
 
   &-video.active {
-    border-top: 2px solid #F51E38;
-    border-right: 2px solid #F51E38;
+    border-top: 2px solid #f51e38;
+    border-right: 2px solid #f51e38;
     border-bottom: 2px solid transparent;
   }
 
   &-audio.active {
-    border-top: 2px solid #F51E38;
-    border-right: 2px solid #F51E38;
+    border-top: 2px solid #f51e38;
+    border-right: 2px solid #f51e38;
     border-bottom: 2px solid transparent;
-    border-left: 2px solid #F51E38;
+    border-left: 2px solid #f51e38;
   }
-
 
   &-radio.active {
-    border-top: 2px solid #F51E38;
+    border-top: 2px solid #f51e38;
     border-bottom: 2px solid transparent;
-    border-left: 2px solid #F51E38;
+    border-left: 2px solid #f51e38;
   }
 }
-
 
 @keyframes rotate {
   from {
@@ -136,11 +134,10 @@ main {
   }
 }
 
-
 .footer-fix {
   width: 100%;
   height: 80px;
-  background-color: #0F1E36;
+  background-color: #0f1e36;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,17 +145,14 @@ main {
   left: 0;
   bottom: 0;
   z-index: 999;
-  color: #fff
-
-
+  color: #fff;
 }
 
-@import 'radio';
+@import "radio";
 
-@import 'audio';
+@import "audio";
 
 @import "video";
-
 
 .video {
   display: none;
@@ -184,7 +178,6 @@ main {
   }
 }
 
-
 .red-text {
-  color: #F51E38;
+  color: #f51e38;
 }
