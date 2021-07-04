@@ -49,14 +49,6 @@ export const videoPlayerInit = () => {
     });
     videoButtonPlay.addEventListener('click', togglePlay);
 
-    // videoPlayer.addEventListener('click', () => {
-    //     if (videoPlayer.fullscreenchange) {
-    //         videoPlayer.remove.addEventListener('click', togglePlay);
-    //     } else {
-    //         videoPlayer.addEventListener('click', togglePlay);
-    //     }
-    // });
-
     videoPlayer.addEventListener('play', toggleIcon);
     videoPlayer.addEventListener('pause', toggleIcon);
 
