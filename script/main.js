@@ -8,7 +8,7 @@ const temp = document.querySelector('.temp');
 
 const stopVideoPlayer = videoPlayerInit();
 const stopRadioPlayer = radioPlayerInit();
-musicPlayerInit();
+//const stopMusicPlayer = musicPlayerInit();
 
 const deactivationPlayer = () => {
     temp.style.display = 'none';
@@ -17,6 +17,7 @@ const deactivationPlayer = () => {
 
     stopVideoPlayer();
     stopRadioPlayer();
+    //stopMusicPlayer();
 }
 
 playerBtn.forEach((btn, i) => {
@@ -26,3 +27,6 @@ playerBtn.forEach((btn, i) => {
         playerBlock[i].classList.add('active');
     })
 })
+
+
+musicPlayerInit();
