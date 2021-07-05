@@ -45,7 +45,7 @@ export const videoPlayerInit = () => {
     videoPlayer.addEventListener('click', () => {
         if (!document.fullscreen) {
             togglePlay()
-        } 
+        }
     });
     videoButtonPlay.addEventListener('click', togglePlay);
 
@@ -82,6 +82,11 @@ export const videoPlayerInit = () => {
     videoPlayer.addEventListener('volumechange', () => {
         videoVolume.value = Math.round(videoPlayer.volume * 100);
     });
+
+    videoPlayerInit.stop = () => {
+        videoPlayer.pause();
+        toggleIcon();
+    }
 
 };
 

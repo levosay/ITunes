@@ -11,7 +11,7 @@ export const radioPlayerInit = () => {
 
     const audio = new Audio();
     audio.type = 'audio/aac';
-
+    let nowVolume = new Array();
     radioStop.disabled = true;
 
     const changeIconPlay = () => {
@@ -69,7 +69,6 @@ export const radioPlayerInit = () => {
         audio.volume = radioVolume.value / 100;
     })
 
-    let nowVolume = new Array();
     faVolumeDown.addEventListener('click', downVolume)
 
     radioStop.addEventListener('click', () => {
@@ -85,4 +84,9 @@ export const radioPlayerInit = () => {
         audio.volume = 1;
         radioVolume.value = audio.volume * 100;
     })
+
+    radioPlayerInit.stop = () => {
+        audio.pause();
+        changeIconPlay();
+    }
 };
