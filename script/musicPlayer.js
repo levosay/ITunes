@@ -40,6 +40,7 @@ export const musicPlayerInit = () => {;
                 trackIndex = playList.length - 1;
             }
             loadTrack();
+            audioProgressTiming.style.width = 0;
         }
 
         const nextTreck = () => {
@@ -49,6 +50,7 @@ export const musicPlayerInit = () => {;
                 trackIndex++;
             }
             loadTrack();
+            audioProgressTiming.style.width = 0;
         }
 
         if (target.classList.contains('audio-button__play')) {
